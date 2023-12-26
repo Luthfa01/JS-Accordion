@@ -1,0 +1,95 @@
+ 
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: hsl(275, 100%, 97%);
+  position: relative;
+}
+.header{
+  background-image: url(images/js-accordion.png);
+  background-size: cover;
+  height: 14rem;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  max-width: 30rem; /* Adjust width as needed */
+  min-height: 30rem; /* Ensures the content takes the full viewport height */
+  display: flex;
+  flex-direction: column;
+  font-family: 'Work Sans'; /* Add your preferred font */
+  background-color: #fff;
+  position: absolute;
+  top: 60%; 
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.faqs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 700;
+  color: hsl(292, 42%, 14%);
+  font-size: 2rem;
+}
+.faqs img{ 
+  width: 25px;
+  padding-right: 1rem;
+}
+.info .question, .info .answer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: .7px solid rgb(204, 202, 202);
+}
+.info .question{
+  padding: 1rem 0;
+  font-weight: bold;
+  color: hsl(292, 42%, 14%)
+}
+.info .question.four{
+  border-bottom: none;
+}
+.info .answer{
+  color:  hsl(292, 16%, 49%);
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.info .question img{
+  width: 25px;
+}
+
+/* the active class is here. It allows the JS works  */
+.info .question.active{
+  border-bottom: none;
+}
+.info .answer.active{
+  /* margin-top: 5px; */
+  height: auto;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+/* If the browser window is 600px or smaller: */
+@media only screen and (max-width: 565px) {
+  .info{
+    margin: 0 1.3rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .header{
+    background-image: url(images/accordion-mobile-bg.png);
+  }
+  .info{
+    margin: 0 1.3rem;
+  }
+}
